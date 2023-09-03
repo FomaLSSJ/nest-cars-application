@@ -3,7 +3,7 @@ import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
 import { connection } from 'mongoose';
 import { AppModule } from './../src/app.module';
-import { CarsMock } from '../src/cars/mock/car.mock';
+import { CarsMock, CarIndex } from '../src/cars/mock/car.mock';
 
 describe('AppController (e2e)', () => {
   let app: INestApplication;
@@ -36,7 +36,7 @@ describe('AppController (e2e)', () => {
   it('/cars (POST)', async () => {
     return request(app.getHttpServer())
       .post('/cars')
-      .send(CarsMock.list[0])
+      .send(CarsMock.getCar(CarIndex.AE86))
       .expect(201)
       .expect((res) => {
         expect(res.body).toBeInstanceOf(Object);
