@@ -11,7 +11,7 @@
 - server
 
   - Выполнить установку зависимостей `npm i --dev`
-  - Запустить линтер `nom run lint`
+  - Запустить линтер `npm run lint`
   - Запустить тесты `npm run test` и `npm run test:e2e`
   - Запустить backend-api `npm start`
 
@@ -45,7 +45,7 @@
 Примеры запросов:
 
 - Create POST, `node dist/main.js -u http://localhost -m POST -r cars -d '{"name":"AE86","brand":"toyota","manufacture":1986,"price":300000}'`
-- Update PUT, `node dist/main.js -u http://localhost -m PUT -r cars/64f494b344c24730fdbae7ea -b '{"name":"AE-86","brand":"toyota","manufacture":1987,"price":360000}'`
+- Update PUT, `node dist/main.js -u http://localhost -m PUT -r cars/64f494b344c24730fdbae7ea -d '{"name":"AE-86","brand":"toyota","manufacture":1987,"price":360000}'`
 - Find all GET, `node dist/main.js -u http://localhost -m GET -r cars`
 - Find one GET, `node dist/main.js -u http://localhost -m GET -r cars/64f494b344c24730fdbae7ea`
 - Delete one DELETE, `node dist/main.js -u http://localhost -m DELETE -r cars/64f494b344c24730fdbae7ea`
